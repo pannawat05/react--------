@@ -9,7 +9,7 @@ function App() {
 
   
     const getStudent = () => {
-      Axios.get("http://localhost:3001/student").then((response) => {
+      Axios.get("https://backend-production-d63e.up.railway.app/student/").then((response) => {
         setStudentList(response.data);
       });
     };
@@ -18,7 +18,7 @@ function App() {
 
   const addStudent = async () => {
     try {
-      const response = await Axios.post('http://localhost:3001/create', {
+      const response = await Axios.post('https://backend-production-d63e.up.railway.app/create/', {
         email,
         name,
       });
@@ -31,7 +31,7 @@ function App() {
   };
 
   const updateEmail = (id) => {
-    Axios.put("http://localhost:3001/update", { email: newEmail, id: id }).then(
+    Axios.put("https://backend-production-d63e.up.railway.app/update/", { email: newEmail, id: id }).then(
       (response) => {
         setStudentList(
           studentList.map((val) => {
