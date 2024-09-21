@@ -21,12 +21,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
+  "homepage": "https://pannawat05.github.io/react--------/",
   "browserslist": {
     "production": [
       ">0.2%",
