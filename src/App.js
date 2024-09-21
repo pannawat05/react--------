@@ -9,7 +9,7 @@ function App() {
 
   
     const getStudent = () => {
-      Axios.get("https://backend-production-d63e.up.railway.app/student/").then((response) => {
+      Axios.get("https://backend-pan.onrender.com/student/").then((response) => {
         setStudentList(response.data);
       });
     };
@@ -18,7 +18,7 @@ function App() {
 
   const addStudent = async () => {
     try {
-      const response = await Axios.post('https://backend-production-d63e.up.railway.app/create/', {
+      const response = await Axios.post('https://backend-pan.onrender.com/create/', {
         email,
         name,
       });
@@ -31,7 +31,7 @@ function App() {
   };
 
   const updateEmail = (id) => {
-    Axios.put("https://backend-production-d63e.up.railway.app/update/", { email: newEmail, id: id }).then(
+    Axios.put("https://backend-pan.onrender.com/update", { email: newEmail, id: id }).then(
       (response) => {
         setStudentList(
           studentList.map((val) => {
@@ -50,7 +50,7 @@ function App() {
 
 
   const deleteStudent = (id) => {
-    Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
+    Axios.delete(`https://backend-pan.onrender.com/delete/${id}`).then((response) => {
       setStudentList(
         studentList.filter((val) => {
           return val.id != id;
