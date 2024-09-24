@@ -16,7 +16,7 @@ function App() {
 
   // Empty dependency array to fetch data only once on component mount
 
-  const addStudent = async () => {
+  const addStudent = async (event) => {
     event.preventDefault();
   try {
     const response = await Axios.post('https://backend-pan.onrender.com/create/', {
@@ -86,7 +86,7 @@ function App() {
               onChange={(event) => setName(event.target.value)}
             />
           </div>
-          <button type="submit" className="btn btn-primary" onClick={addStudent}>
+          <button type="submit" className="btn btn-primary" onClick={addStudent(event)}>
             Submit
           </button>
         </form>
