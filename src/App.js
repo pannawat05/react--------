@@ -67,6 +67,7 @@ function App() {
   return (
     <div className="App container">
       <h1>Student info</h1>
+      <form action='#'>
       <div className="info">
           <div className="mb-3">
             <label for="Email1" className="form-label">Email address</label>
@@ -85,9 +86,11 @@ function App() {
               onChange={(event) => setName(event.target.value)}
             />
           </div>
-          <button  className="btn btn-primary" onClick={addStudent}>
+          <button   className="btn btn-primary" onClick={(event) => { event.preventDefault(); addStudent(); }}>
             Submit
           </button>
+          </div>
+        </form>
         <hr />
         <div className="student">
           <button className="btn btn-success" onClick={getStudent}>
@@ -119,8 +122,7 @@ function App() {
           ))}
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 export default App;
