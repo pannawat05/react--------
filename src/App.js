@@ -71,7 +71,7 @@ function App() {
           <div className="mb-3">
             <label for="Email1" className="form-label">Email address</label>
             <input
-              type="email"
+              type="text"
               className="form-control"
               onChange={(event) => setEmail(event.target.value)}
             />
