@@ -17,18 +17,22 @@ function App() {
   // Empty dependency array to fetch data only once on component mount
 
   const addStudent = async () => {
-    try {
-      const response = await Axios.post('https://backend-pan.onrender.com/create/', {
-        email,
-        name,
-      });
-      // Handle success response (optional: display confirmation message)
-      setStudentList([...studentList, { email, name }]);
-    } catch (error) {
-      console.error('Error adding student:', error);
-      // Handle errors appropriately, e.g., display an error message to the user
+    
+  try {
+    const response = await Axios.post('https://backend-pan.onrender.com/create/', {
+      name:name,
+      email:email,
+    });
+
+    if (response.status === 200) {
+      console.log('Data added successfully:', response.data);
+    } else {
+      console.log('Unexpected response:', response);
     }
-  };
+  } catch (error) {
+    console.error('Error adding student:', error.response ? error.response.data : error.message);
+  }
+};
 
   const updateEmail = (id) => {
     Axios.put("https://backend-pan.onrender.com/update", { email: newEmail, id: id }).then(
@@ -64,11 +68,10 @@ function App() {
     <div className="App container">
       <h1>Student info</h1>
       <div className="info">
-        <form action="">
           <div className="mb-3">
             <label for="Email1" className="form-label">Email address</label>
             <input
-              type="email"
+              type="text"
               className="form-control"
               onChange={(event) => setEmail(event.target.value)}
             />
@@ -85,7 +88,6 @@ function App() {
           <button  className="btn btn-primary" onClick={addStudent}>
             Submit
           </button>
-        </form>
         <hr />
         <div className="student">
           <button className="btn btn-success" onClick={getStudent}>
