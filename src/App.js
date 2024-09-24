@@ -19,8 +19,8 @@ function App() {
   const addStudent = async () => {
     try {
       const response = await Axios.post('https://backend-pan.onrender.com/create/', {
-        email,
         name,
+        email,
       });
       // Handle success response (optional: display confirmation message)
       setStudentList([...studentList, { email, name }]);
