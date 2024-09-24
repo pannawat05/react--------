@@ -26,6 +26,7 @@ function App() {
 
     if (response.status === 200) {
       console.log('Data added successfully:', response.data);
+      setStudentList();
     } else {
       console.log('Unexpected response:', response);
     }
