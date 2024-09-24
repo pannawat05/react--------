@@ -17,6 +17,7 @@ function App() {
   // Empty dependency array to fetch data only once on component mount
 
   const addStudent = async () => {
+    event.preventDefault();
   try {
     const response = await Axios.post('https://backend-pan.onrender.com/create/', {
       name:name,
