@@ -68,7 +68,6 @@ function App() {
     <div className="App container">
       <h1>Student info</h1>
       <div className="info">
-        <form action="">
           <div className="mb-3">
             <label for="Email1" className="form-label">Email address</label>
             <input
@@ -89,7 +88,6 @@ function App() {
           <button  className="btn btn-primary" onClick={addStudent()}>
             Submit
           </button>
-        </form>
         <hr />
         <div className="student">
           <button className="btn btn-success" onClick={getStudent}>
