@@ -67,7 +67,9 @@ function App() {
   return (
     <div className="App container">
       <h1>Student info</h1>
-      <form action='#'>
+      <form action='#'
+      onSubmit={this.input.value = ''}
+      >
       <div className="info">
           <div className="mb-3">
             <label for="Email1" className="form-label">Email address</label>
