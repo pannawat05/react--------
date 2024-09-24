@@ -82,7 +82,7 @@ function App() {
               onChange={(event) => setName(event.target.value)}
             />
           </div>
-          <button type="submit" className="btn btn-primary" onClick={addStudent}>
+          <button  className="btn btn-primary" onClick={addStudent}>
             Submit
           </button>
         </form>
