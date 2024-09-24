@@ -17,18 +17,21 @@ function App() {
   // Empty dependency array to fetch data only once on component mount
 
   const addStudent = async () => {
-    try {
-      const response = await Axios.post('https://backend-pan.onrender.com/create/', {
-        name,
-        email,
-      });
-      // Handle success response (optional: display confirmation message)
-      setStudentList([...studentList, { email, name }]);
-    } catch (error) {
-      console.error('Error adding student:', error);
-      // Handle errors appropriately, e.g., display an error message to the user
+  try {
+    const response = await Axios.post('https://backend-pan.onrender.com/create/', {
+      name,
+      email,
+    });
+
+    if (response.status === 200) {
+      console.log('Data added successfully:', response.data);
+    } else {
+      console.log('Unexpected response:', response);
     }
-  };
+  } catch (error) {
+    console.error('Error adding student:', error.response ? error.response.data : error.message);
+  }
+};
 
   const updateEmail = (id) => {
     Axios.put("https://backend-pan.onrender.com/update", { email: newEmail, id: id }).then(
