@@ -19,8 +19,8 @@ function App() {
   const addStudent = async () => {
   try {
     const response = await Axios.post('https://backend-pan.onrender.com/create/', {
-      name,
-      email,
+      name:name,
+      email:email,
     });
 
     if (response.status === 200) {
